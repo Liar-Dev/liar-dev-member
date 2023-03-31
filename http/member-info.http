@@ -1,0 +1,33 @@
+### 1. 유저 정보 요청
+
+GET {{baseUrl}}/users
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+RefreshToken: {{refreshToken}}
+UserId: {{userId}}
+Accept: */*
+Connection: keep-alive
+
+
+> {%
+    client.test("유저 정보 요청", function() {
+        client.assert(response.status === 200, "Response status is OK");
+    });
+%}
+
+### 2. 유저 정보 요청 인증 실패
+
+GET {{baseUrl}}/users
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNTEyZGQxZi04ZTQ5LTRkYzItYTExZ23fklZTAxODYwYTkxNjIiLCJhdXRoIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NzgzNzkxOTcsImV4cCI6MTY3ODQwMDc5N30.gaz-hMxYNLNd0sNfmiMswYz8FF0t4I7zoGW6gifbfe85iuuGMsdfLdTewbNgQBRZ85z_RA4R_knoHPu8Ym_ftQ
+RefreshToken: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIwNTEyZGQxZi04ZTQ5LTRkYzItYTExZ23fklZTAxODYwYTkxNjIiLCJhdXRoIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2NzgzNzkxOTcsImV4cCI6MTY3ODQwMDc5N30.gaz-hMxYNLNd0sNfmiMswYz8FF0t4I7zoGW6gifbfe85iuuGMsdfLdTewbNgQBRZ85z_RA4R_knoHPu8Ym_ftQ,
+UserId: {{userId}}
+Accept: */*
+Connection: keep-alive
+
+
+> {%
+    client.test("유저 정보 요청", function() {
+        client.assert(response.status === 400, "Response status is OK");
+    });
+%}

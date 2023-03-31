@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      uri: ---- secret ----
+  profiles:
+    active: local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+  cloud:
+    config:
+      name: common-local
+
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+  cloud:
+    config:
+      name: common-dev

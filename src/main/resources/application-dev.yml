@@ -1,0 +1,23 @@
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: ---- secret ----
+    username: ---- secret ----
+    password: ---- secret ----
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties:
+      hibernate:
+        format_sql: true
+    show-sql: true
+
+  data:
+    redis:
+      host: ---- secret ----
+      port: 6379
