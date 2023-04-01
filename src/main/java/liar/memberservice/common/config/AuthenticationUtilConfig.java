@@ -29,10 +29,10 @@ public class AuthenticationUtilConfig {
         CorsConfiguration corsConfiguration = new CorsConfiguration();
         corsConfiguration.setAllowCredentials(true);
         corsConfiguration.addAllowedOriginPattern("http://localhost:8000");
-        corsConfiguration.addAllowedOriginPattern("http://3.39.187.39/:8000");
-        corsConfiguration.addAllowedOriginPattern("http://43.201.26.3/:8000");
-        corsConfiguration.addAllowedOriginPattern("http://3.39.187.39/:8080");
-        corsConfiguration.addAllowedOriginPattern("http://3.39.187.39/:8761");
+        corsConfiguration.addAllowedOriginPattern("");
+        corsConfiguration.addAllowedOriginPattern("");
+        corsConfiguration.addAllowedOriginPattern("");
+        corsConfiguration.addAllowedOriginPattern("");
         corsConfiguration.addAllowedHeader("*");
         corsConfiguration.addAllowedMethod("*");
 
