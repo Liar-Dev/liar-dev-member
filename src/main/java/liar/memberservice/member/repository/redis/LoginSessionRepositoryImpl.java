@@ -37,7 +37,7 @@ public class LoginSessionRepositoryImpl implements LoginSessionRepository {
 
     @Override
     public boolean existLoginSession(String userId) {
-        return redisTemplate.hasKey(getLoginSessionKey(userId));
+        return Boolean.TRUE.equals(redisTemplate.hasKey(getLoginSessionKey(userId)));
     }
 
     @Override
