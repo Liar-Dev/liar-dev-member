@@ -27,12 +27,12 @@ public class LoginSessionFilter extends OncePerRequestFilter {
 
     private final ConcurrentHashMap<String, LoginSessionCheck> sessionFilter = new ConcurrentHashMap<>();
 
-    @Qualifier("defaultObjectMapper")
-    private final ObjectMapper defaultObjectMapper;
+//    @Qualifier("defaultObjectMapper")
+//    private final ObjectMapper defaultObjectMapper;
 
-    public LoginSessionFilter(@Qualifier("defaultObjectMapper") ObjectMapper defaultObjectMapper) {
-        this.defaultObjectMapper = defaultObjectMapper;
-    }
+//    public LoginSessionFilter(@Qualifier("defaultObjectMapper") ObjectMapper defaultObjectMapper) {
+//        this.defaultObjectMapper = defaultObjectMapper;
+//    }
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)

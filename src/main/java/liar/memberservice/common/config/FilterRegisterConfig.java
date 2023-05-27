@@ -10,18 +10,18 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class FilterRegisterConfig {
 
-    @Qualifier("defaultObjectMapper")
-    private final ObjectMapper objectMapper;
-
-    public FilterRegisterConfig(@Qualifier("defaultObjectMapper") ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
+//    @Qualifier("defaultObjectMapper")
+//    private final ObjectMapper objectMapper;
+//
+//    public FilterRegisterConfig(@Qualifier("defaultObjectMapper") ObjectMapper objectMapper) {
+//        this.objectMapper = objectMapper;
+//    }
 
     @Bean
-    public FilterRegistrationBean<LoginSessionFilter> loginSessionFilter(@Qualifier("defaultObjectMapper") ObjectMapper objectMapper) {
+    public FilterRegistrationBean<LoginSessionFilter> loginSessionFilter() {
         FilterRegistrationBean<LoginSessionFilter> registrationBean = new FilterRegistrationBean<>();
 
-        registrationBean.setFilter(new LoginSessionFilter(objectMapper));
+        registrationBean.setFilter(new LoginSessionFilter());
         registrationBean.addUrlPatterns("/member-service/login/**");
 
         return registrationBean;
